@@ -16,8 +16,8 @@ Usage
 
     var configOpts = {
       pathsToFilesToCache: {
-        tree: __dirname + `/static/tree.png`,
-        link: __dirname + `/static/heroes/link.png`,         
+        tree: __dirname + '/static/tree.png',
+        link: __dirname + '/static/heroes/link.png',         
       }
     };
     PasteBitmaps(configOpts, startPasting);
@@ -72,7 +72,7 @@ Usage
 Tests
 -----
 
-Run tests with `make test`.
+Run tests with 'make test'.
 
 License
 -------
