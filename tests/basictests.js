@@ -1,5 +1,6 @@
 var test = require('tape');
 var PasteBitmaps = require('../index');
+var fs = require('fs');
 
 var testCases = [
   {
@@ -57,7 +58,7 @@ function runTest(testCase) {
       assertNoError(t, error, 'No error while pasting.');
       var filename = testCase.name + '.png.';
       console.log('Writing', filename, '- please visually inspect for problems.');
-      fs.writeFile(testCase.name + '.png', resultBufer, t.end);    
+      fs.writeFile('tests/test-output/' + testCase.name + '.png', resultBuffer, t.end);
     }
   });
 }
