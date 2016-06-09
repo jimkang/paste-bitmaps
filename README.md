@@ -106,6 +106,10 @@ Usage
       }
     }
 
+Resulting bitmap:
+
+![readme](https://cloud.githubusercontent.com/assets/324298/15917553/c720ece0-2dcb-11e6-9407-8ce895f71f7e.png)
+
 Tests
 -----
 
