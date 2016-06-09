@@ -16,8 +16,10 @@ Usage
 
     var configOpts = {
       pathsToFilesToCache: {
-        tree: __dirname + '/static/tree.png',
-        link: __dirname + '/static/heroes/link.png',         
+        smidgeo_headshot: 'http://smidgeo.com/images/smidgeo_headshot.jpg',
+        smidgeo_on_the_move: 'http://smidgeo.com/images/smidgeo_on_the_move.png',
+        tree: __dirname + '/data/green-tree.png',
+        link: __dirname + '/data/link-one-arm-up.png'
       }
     };
     PasteBitmaps(configOpts, startPasting);
@@ -35,9 +37,34 @@ Usage
           },
           images: [
             {
+              url: 'http://nonstopscrollshop.com/res/nonstopscrollshop.png',
+              x: 256,
+              y: 256
+            },
+            {
+              cacheId: 'smidgeo_headshot',
+              x: 800,
+              y: 512
+            },
+            {
+              cacheId: 'smidgeo_on_the_move',
+              x: 0,
+              y: 128
+            },
+            {
+              cacheId: 'smidgeo_on_the_move',
+              x: 480,
+              y: 0
+            },
+            {
               cacheId: 'tree',
               x: 100,
               y: 100
+            },
+            {
+              cacheId: 'tree',
+              x: 700,
+              y: 500
             },
             {
               cacheId: 'tree',
@@ -50,9 +77,19 @@ Usage
               y: 384
             },
             {
-              filePath: __dirname + '/downloads/cool-tree.jpg',
+              filePath: __dirname + '/data/fairy.png',
               x: 600,
               y: 256
+            },
+            {
+              filePath: __dirname + '/data/fairy.png',
+              x: 0,
+              y: 384
+            },
+            {
+              filePath: __dirname + '/data/moblin.png',
+              x: 192,
+              y: 1024
             }
           ]
         };

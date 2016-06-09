@@ -74,7 +74,6 @@ function PasteBitmaps(createOpts, constructDone) {
     }
 
     function addImages(scene, done) {
-      debugger;
       var q = queue(1);
       images.forEach(queuePaste);
       q.awaitAll(passScene);
@@ -84,7 +83,6 @@ function PasteBitmaps(createOpts, constructDone) {
       }
 
       function passScene(error) {
-      debugger;
         if (error) {
           done(error);
         }
@@ -95,7 +93,6 @@ function PasteBitmaps(createOpts, constructDone) {
     }
 
     function addLayer(scene, imageSpec, done) {
-      debugger;
       if (imageSpec.cacheId) {
         scene.composite(
           assetsForIds[imageSpec.cacheId], imageSpec.x, imageSpec.y, done
@@ -113,7 +110,6 @@ function PasteBitmaps(createOpts, constructDone) {
       }
 
       function addLoadedImage(error, loadedImage) {
-        debugger;
         if (error) {
           done(error);
         }

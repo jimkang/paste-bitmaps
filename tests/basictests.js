@@ -8,7 +8,7 @@ var testCases = [
     config: {
       pathsToFilesToCache: {
         tree: __dirname + '/data/green-tree.png',
-        link: __dirname + '/data/link-one-arm-up.png',         
+        link: __dirname + '/data/link-one-arm-up.png'
       }
     },
     opts: {
@@ -37,6 +37,151 @@ var testCases = [
           filePath: __dirname + '/data/fairy.png',
           x: 600,
           y: 256
+        }
+      ]
+    }
+  },
+
+  {
+    name: 'nothing-cached',
+    config: {
+    },
+    opts: {
+      background: {
+        width: 256,
+        height: 1280,
+        fill: 0X002200FF
+      },
+      images: [
+        {
+          filePath: __dirname + '/data/fairy.png',
+          x: 0,
+          y: 384
+        },
+        {
+          filePath: __dirname + '/data/moblin.png',
+          x: 192,
+          y: 1024
+        }
+      ]
+    }
+  },
+
+  {
+    name: 'from-the-internet',
+    config: {
+      pathsToFilesToCache: {
+        smidgeo_headshot: 'http://smidgeo.com/images/smidgeo_headshot.jpg',
+        smidgeo_on_the_move: 'http://smidgeo.com/images/smidgeo_on_the_move.png'
+      }
+    },
+    opts: {
+      background: {
+        width: 512,
+        height: 512,
+        fill: 0X222222FF
+      },
+      images: [
+        {
+          url: 'http://nonstopscrollshop.com/res/nonstopscrollshop.png',
+          x: 256,
+          y: 256
+        },
+        {
+          cacheId: 'smidgeo_headshot',
+          x: 256,
+          y: 480
+        },
+        {
+          cacheId: 'smidgeo_headshot',
+          x: 256,
+          y: 96
+        },
+        {
+          cacheId: 'smidgeo_on_the_move',
+          x: 0,
+          y: 128
+        },
+        {
+          cacheId: 'smidgeo_on_the_move',
+          x: 480,
+          y: 0
+        }
+      ]
+    }
+  },
+
+  {
+    name: 'README',
+    config: {
+      pathsToFilesToCache: {
+        smidgeo_headshot: 'http://smidgeo.com/images/smidgeo_headshot.jpg',
+        smidgeo_on_the_move: 'http://smidgeo.com/images/smidgeo_on_the_move.png',
+        tree: __dirname + '/data/green-tree.png',
+        link: __dirname + '/data/link-one-arm-up.png'
+      }
+    },
+    opts: {
+      background: {
+        width: 1024,
+        height: 768,
+        fill: 0XFEDBABFF
+      },
+      images: [
+        {
+          url: 'http://nonstopscrollshop.com/res/nonstopscrollshop.png',
+          x: 256,
+          y: 256
+        },
+        {
+          cacheId: 'smidgeo_headshot',
+          x: 800,
+          y: 512
+        },
+        {
+          cacheId: 'smidgeo_on_the_move',
+          x: 0,
+          y: 128
+        },
+        {
+          cacheId: 'smidgeo_on_the_move',
+          x: 480,
+          y: 0
+        },
+        {
+          cacheId: 'tree',
+          x: 100,
+          y: 100
+        },
+        {
+          cacheId: 'tree',
+          x: 700,
+          y: 500
+        },
+        {
+          cacheId: 'tree',
+          x: 1000,
+          y: 600
+        },
+        {
+          cacheId: 'link',
+          x: 512,
+          y: 384
+        },
+        {
+          filePath: __dirname + '/data/fairy.png',
+          x: 600,
+          y: 256
+        },
+        {
+          filePath: __dirname + '/data/fairy.png',
+          x: 0,
+          y: 384
+        },
+        {
+          filePath: __dirname + '/data/moblin.png',
+          x: 192,
+          y: 1024
         }
       ]
     }
