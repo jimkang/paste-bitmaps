@@ -1,6 +1,6 @@
 {
   "name": "paste-bitmaps",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pastes bitmaps together for you using Jimp.",
   "main": "index.js",
   "scripts": {
