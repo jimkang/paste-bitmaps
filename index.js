@@ -105,6 +105,9 @@ function PasteBitmaps(createOpts, constructDone) {
         }
         Jimp.read(resource, addLoadedImage);
       }
+      else if (imageSpec.jimpImage) {
+        scene.composite(imageSpec.jimpImage, imageSpec.x, imageSpec.y, done);
+      }
       else {
         done(new Error('Invalid image spec. Needs either a cacheId, filePath, or url.'));
       }

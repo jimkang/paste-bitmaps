@@ -1,6 +1,7 @@
 var test = require('tape');
 var PasteBitmaps = require('../index');
 var fs = require('fs');
+var Jimp = require('jimp');
 
 var testCases = [
   {
@@ -215,5 +216,65 @@ function assertNoError(t, error, message) {
     if (error.stack) {
       console.log(error.stack);
     }
+  }
+}
+
+test('Use Jimp image directly', useJimpImageDirectlyTest);
+
+function useJimpImageDirectlyTest(t) {
+  Jimp.read(__dirname + '/data/link-one-arm-up.png', useImage);
+
+  function useImage(error, linkImage) {
+    assertNoError(t, error, 'No error while loading test image.');
+    var config = {
+      pathsToFilesToCache: {
+        smidgeo_headshot: 'http://smidgeo.com/images/smidgeo_headshot.jpg',
+        smidgeo_on_the_move: 'http://smidgeo.com/images/smidgeo_on_the_move.png'
+      }
+    };
+
+    PasteBitmaps(config, startPasting);  
+
+    function startPasting(error, pasteBitmaps) {
+      assertNoError(t, error, 'No error while constructing pasteBitmaps.');
+      var opts = {
+        background: {
+          width: 1024,
+          height: 768,
+          fill: 0XFEDBABFF
+        },
+        images: [
+          {
+            cacheId: 'smidgeo_headshot',
+            x: 100,
+            y: 100
+          },
+          {
+            cacheId: 'smidgeo_on_the_move',
+            x: 500,
+            y: 400
+          },
+          {
+            filePath: __dirname + '/data/fairy.png',
+            x: 600,
+            y: 256
+          },
+          {
+            jimpImage: linkImage,
+            x: 512,
+            y: 384
+          }
+        ]
+      };
+      
+      pasteBitmaps(opts, checkResult);
+    }
+  }
+
+  function checkResult(error, resultBuffer) {
+    assertNoError(t, error, 'No error while pasting.');
+    var filename = 'use-jimp-image-directly' + '.png';
+    console.log('Writing', filename, '- please visually inspect for problems.');
+    fs.writeFile('tests/test-output/' + filename, resultBuffer, t.end);
   }
 }

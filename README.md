@@ -110,6 +110,23 @@ Resulting bitmap:
 
 ![readme](https://cloud.githubusercontent.com/assets/324298/15917553/c720ece0-2dcb-11e6-9407-8ce895f71f7e.png)
 
+If you want to use image objects you've loaded with Jimp directly, you can specify an image entry in the paste opts like so:
+
+    {
+      background: {
+        width: 1024,
+        height: 768,
+        fill: 0XFEDBABFF
+      },
+      images: [
+        {
+          jimpImage: linkImage,
+          x: 512,
+          y: 384
+        }
+      ]
+    }
+
 Tests
 -----
 
